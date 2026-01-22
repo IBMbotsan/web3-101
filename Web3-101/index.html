@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web3-101 | Interactive Blockchain Learning</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="dark-theme">
+    <div class="sidebar-overlay" id="sidebarOverlay"></div>
+    <button class="mobile-nav-toggle" id="mobileNavToggle" aria-label="Toggle Menu">
+        <span></span>
+        <span></span>
+        <span></span>
+    </button>
+
+    <div class="app-container">
+        <aside class="sidebar">
+            <div class="sidebar-header">
+                <h1>Web3<span>101</span></h1>
+                <p>Master the Decentralized Future</p>
+            </div>
+            <nav class="nav-menu">
+                <div class="nav-group">
+                    <h3>Deep Technicals</h3>
+                    <a href="#utxo" class="nav-item" data-module="utxo">
+                        <span class="icon">🏦</span> UTXO vs Account
+                    </a>
+                    <a href="#gossip" class="nav-item" data-module="gossip">
+                        <span class="icon">📢</span> Gossip Protocol
+                    </a>
+                    <a href="#difficulty" class="nav-item" data-module="difficulty">
+                        <span class="icon">⚙️</span> Difficulty Adjustment
+                    </a>
+                    <a href="#statemachine" class="nav-item" data-module="statemachine">
+                        <span class="icon">🔄</span> State Machine
+                    </a>
+                    <a href="#forks" class="nav-item" data-module="forks">
+                        <span class="icon">🍴</span> Soft & Hard Forks
+                    </a>
+                    <a href="#bloom" class="nav-item" data-module="bloom">
+                        <span class="icon">🌸</span> Bloom Filters
+                    </a>
+                </div>
+                <div class="nav-group">
+                    <h3>Fundamentals</h3>
+                    <a href="#hashing" class="nav-item active" data-module="hashing">
+                        <span class="icon">#</span> Hashing
+                    </a>
+                    <a href="#merkle" class="nav-item" data-module="merkle">
+                        <span class="icon">🌿</span> Merkle Trees
+                    </a>
+                    <a href="#keys" class="nav-item" data-module="keys">
+                        <span class="icon">🔑</span> Keys & Signatures
+                    </a>
+                    <a href="#wallets" class="nav-item" data-module="wallets">
+                        <span class="icon">🔐</span> HD Wallets
+                    </a>
+                </div>
+                <div class="nav-group">
+                    <h3>Blockchain</h3>
+                    <a href="#blocks" class="nav-item" data-module="blocks">
+                        <span class="icon">📦</span> Blocks
+                    </a>
+                    <a href="#blockchain" class="nav-item" data-module="blockchain">
+                        <span class="icon">🔗</span> The Chain
+                    </a>
+                    <a href="#transactions" class="nav-item" data-module="transactions">
+                        <span class="icon">💸</span> Transactions
+                    </a>
+                    <a href="#pow" class="nav-item" data-module="pow">
+                        <span class="icon">⛏️</span> Proof of Work
+                    </a>
+                    <a href="#pos" class="nav-item" data-module="pos">
+                        <span class="icon">💎</span> Proof of Stake
+                    </a>
+                    <a href="#lsd" class="nav-item" data-module="lsd">
+                        <span class="icon">💧</span> Liquid Staking (LSD)
+                    </a>
+                </div>
+                <div class="nav-group">
+                    <h3>Contract Deep Dive</h3>
+                    <a href="#testnets" class="nav-item" data-module="testnets">
+                        <span class="icon">🧪</span> Testnets & Faucets
+                    </a>
+                    <a href="#abi" class="nav-item" data-module="abi">
+                        <span class="icon">📋</span> ABIs & Encoding
+                    </a>
+                    <a href="#deployment" class="nav-item" data-module="deployment">
+                        <span class="icon">🏗️</span> Deployment Logic
+                    </a>
+                    <a href="#events" class="nav-item" data-module="events">
+                        <span class="icon">📣</span> Events & Logs
+                    </a>
+                    <a href="#reentrancy" class="nav-item" data-module="reentrancy">
+                        <span class="icon">🛡️</span> Reentrancy Bug
+                    </a>
+                    <a href="#gaslab" class="nav-item" data-module="gaslab">
+                        <span class="icon">⛽</span> Gas Optimization
+                    </a>
+                    <a href="#proxies" class="nav-item" data-module="proxies">
+                        <span class="icon">🔄</span> Proxies & Upgrades
+                    </a>
+                    <a href="#legos" class="nav-item" data-module="legos">
+                        <span class="icon">🧱</span> Composability
+                    </a>
+                    <a href="#fallback" class="nav-item" data-module="fallback">
+                        <span class="icon">📥</span> Fallback & Receive
+                    </a>
+                </div>
+                <div class="nav-group">
+                    <h3>Smart Contracts Basics</h3>
+                    <a href="#contracts" class="nav-item" data-module="contracts">
+                        <span class="icon">📜</span> Smart Contracts
+                    </a>
+                    <a href="#tokens" class="nav-item" data-module="tokens">
+                        <span class="icon">🪙</span> Tokens (ERC-20/721)
+                    </a>
+                    <a href="#evm" class="nav-item" data-module="evm">
+                        <span class="icon">⚙️</span> Deep EVM
+                    </a>
+                </div>
+                <div class="nav-group">
+                    <h3>Ecosystem</h3>
+                    <a href="#dapps" class="nav-item" data-module="dapps">
+                        <span class="icon">🌐</span> How dApps Work
+                    </a>
+                    <a href="#daos" class="nav-item" data-module="daos">
+                        <span class="icon">🗳️</span> DAOs & Governance
+                    </a>
+                </div>
+                <div class="nav-group">
+                    <h3>DeFi & UX</h3>
+                    <a href="#defi" class="nav-item" data-module="defi">
+                        <span class="icon">📈</span> AMMs & DeFi Math
+                    </a>
+                    <a href="#aa" class="nav-item" data-module="aa">
+                        <span class="icon">👤</span> Account Abstraction
+                    </a>
+                </div>
+                <div class="nav-group">
+                    <h3>Scaling & Privacy</h3>
+                    <a href="#layer2" class="nav-item" data-module="layer2">
+                        <span class="icon">⚡</span> Layer 2 & Rollups
+                    </a>
+                    <a href="#zkp" class="nav-item" data-module="zkp">
+                        <span class="icon">🤫</span> ZK-Proofs
+                    </a>
+                    <a href="#bridges" class="nav-item" data-module="bridges">
+                        <span class="icon">🌉</span> Cross-Chain Bridges
+                    </a>
+                </div>
+                <div class="nav-group">
+                    <h3>Advanced Topics</h3>
+                    <a href="#storage" class="nav-item" data-module="storage">
+                        <span class="icon">📦</span> IPFS & Storage
+                    </a>
+                    <a href="#oracles" class="nav-item" data-module="oracles">
+                        <span class="icon">🔮</span> Oracles
+                    </a>
+                    <a href="#mev" class="nav-item" data-module="mev">
+                        <span class="icon">🤖</span> MEV & Front-running
+                    </a>
+                </div>
+                <div class="nav-group">
+                    <h3>Cutting Edge</h3>
+                    <a href="#flashloans" class="nav-item" data-module="flashloans">
+                        <span class="icon">⚡</span> Flash Loans
+                    </a>
+                    <a href="#stablecoins" class="nav-item" data-module="stablecoins">
+                        <span class="icon">💵</span> Stablecoins
+                    </a>
+                    <a href="#identity" class="nav-item" data-module="identity">
+                        <span class="icon">🆔</span> Identity (ENS/SBT)
+                    </a>
+                    <a href="#restaking" class="nav-item" data-module="restaking">
+                        <span class="icon">🏛️</span> Restaking
+                    </a>
+                </div>
+            </nav>
+            <div class="sidebar-footer">
+                <p>Interactive Learning Explorer</p>
+            </div>
+        </aside>
+
+        <main class="main-content" id="app">
+            <!-- Content will be injected here -->
+            <section class="loading-screen">
+                <div class="loader"></div>
+                <p>Loading Module...</p>
+            </section>
+        </main>
+    </div>
+
+    <script type="module" src="main.js"></script>
+    <script>
+        // Mobile Sidebar Toggle Logic
+        const toggle = document.getElementById('mobileNavToggle');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.getElementById('sidebarOverlay');
+
+        function toggleSidebar() {
+            sidebar.classList.toggle('open');
+            overlay.classList.toggle('active');
+            toggle.classList.toggle('open');
+        }
+
+        toggle.addEventListener('click', toggleSidebar);
+        overlay.addEventListener('click', toggleSidebar);
+
+        // Close sidebar when clicking nav items on mobile
+        document.querySelectorAll('.nav-item').forEach(item => {
+            item.addEventListener('click', () => {
+                if (window.innerWidth <= 768) {
+                    toggleSidebar();
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
